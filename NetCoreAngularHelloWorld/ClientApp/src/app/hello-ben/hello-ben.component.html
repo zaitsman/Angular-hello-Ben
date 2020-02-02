@@ -1,0 +1,18 @@
+<h1>Hello, Ben!</h1>
+<!-- Another directive - *ngIf. Also uses the fact that null == true in Javascript. -->
+<p *ngIf="!data"><em>No Data yet, click Get data...</em></p>
+<button (click)="getData()">Get data </button>
+
+<div *ngIf="data">
+  <label for="key">Key</label>
+  <!-- Note: [()] is super important - it makes the ngModel two-way bound. -->
+  <input type="text" [(ngModel)]="data.key" />
+  <br />
+  <label for="something">Something For Path</label>
+  <input type="text" [(ngModel)]="something" />
+  <br />
+  <label for="fq">fq parameter For query</label>
+  <input type="text" [(ngModel)]="fq" />
+  <br />
+  <button (click)="postData()">Post data </button>
+</div>
